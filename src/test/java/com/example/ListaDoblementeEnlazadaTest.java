@@ -32,6 +32,15 @@ public class ListaDoblementeEnlazadaTest {
 
     @Test
     public void testContains() {
+        
+        ListaDoblementeEnlazada l = new ListaDoblementeEnlazada();
+        assertEquals(false, l.contains("berni"));
+        l.add("berni");
+        assertEquals(true, l.contains("berni"));
+        l.add("berni1");
+        l.add("berni2");
+        l.add("berni3");
+        assertEquals(true, l.contains("berni"));
 
     }
 
@@ -52,7 +61,12 @@ public class ListaDoblementeEnlazadaTest {
 
     @Test
     public void testIsEmpty() {
-
+        ListaDoblementeEnlazada l = new ListaDoblementeEnlazada();
+        assertEquals(true, l.isEmpty());
+        l.add(new String("Prueba"));
+        assertEquals(false, l.isEmpty());
+        l.remove(new String("Prueba"));
+        assertEquals(true, l.isEmpty());
     }
 
     @Test
@@ -121,6 +135,15 @@ public class ListaDoblementeEnlazadaTest {
 
     @Test
     public void testToArray() {
+        //TODO: Revisar
+        ListaDoblementeEnlazada l = new ListaDoblementeEnlazada();
+
+        //assertEquals(null, l.toArray());
+        l.add(3);
+        l.add(2);
+        l.add(1);
+        Object[] array = {1,2,3};
+        assertEquals(array, l.toArray());
 
     }
 

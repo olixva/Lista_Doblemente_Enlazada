@@ -118,7 +118,7 @@ public class ListaDoblementeEnlazada implements List<Object> {
                 return true;
             aux = aux.siguiente;
         }
-        return true;
+        return false;
     }
 
     @Override
@@ -308,11 +308,24 @@ public class ListaDoblementeEnlazada implements List<Object> {
     @Override
     public Object[] toArray() {
 
-        return null;
+        Object[] array = new Object[tamayo];
+        Nodo aux = inicio;
+
+        for (int i = 0; aux != null; i++) {
+
+            array[i] = aux.elemento;
+
+            aux = aux.siguiente;
+            
+        }
+
+        return array;
     }
 
     @Override
-    public <T> T[] toArray(T[] arg0) {
+    public <T> T[] toArray(T[] a) {
+
+           
 
         return null;
     }
